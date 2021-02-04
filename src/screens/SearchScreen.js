@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { Text, StyleSheet, ScrollView } from "react-native";
 import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";
 import ResultsList from "../components/ResultsList";
@@ -7,8 +7,6 @@ import ResultsList from "../components/ResultsList";
 const SearchScreen = () => {
   const [term, setTerm] = useState("");
   const [searchApi, results, errorMessage] = useResults();
-
-  console.log(results);
 
   const filterResultsByPrice = (price) =>
     results.filter((result) => result.price === price);
